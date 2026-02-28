@@ -91,36 +91,33 @@
    ============================================================ */
 :root {
   /* ── Border Radius ───────────────────────────────────────────
-     Profiles: sharp = 0.25rem | standard = 0.5rem | rounded = 0.75rem
-     Layout Builder sets to match domain personality.            */
-  --radius: 0.5rem;
+     nature-wellness: soft = 1.5rem (calming, rounded, anti-anxiety)  */
+  --radius: 1.5rem;
 
   /* ── Base Surfaces ───────────────────────────────────────── */
-  --background: oklch(1 0 0);
+  --background: oklch(0.995 0.005 110);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --surface-hover: oklch(0.96 0 0);
-  --surface-active: oklch(0.94 0 0);
+  --surface-hover: oklch(0.97 0.01 145);
+  --surface-active: oklch(0.95 0.015 145);
 
-  /* ── Primary Color ───────────────────────────────────────────
-     !! OVERRIDE REQUIRED — Layout Builder must replace --primary and
-        --primary-h with domain-appropriate oklch values.
-        See references/design-system.md for the 14-domain color table.
-        QA rejects builds where --primary stays oklch(0.205 0 0). !! */
-  --primary: oklch(0.205 0 0);
+  /* ── AESTHETIC: nature-wellness / DOMAIN: healthcare (consumer behavioral health) ───
+     Sage green primary — calm, grounding, anti-anxiety. Warm amber accent.
+     Hue 145 = forest/sage green. High lightness for accessible, inviting tone. */
+  --primary: oklch(0.52 0.13 145);
   --primary-foreground: oklch(0.985 0 0);
-  --primary-h: 270; /* Integer hue extracted from --primary */
+  --primary-h: 145; /* Sage green hue */
 
   /* ── Derived Color Tokens ────────────────────────────────── */
   --section-dark: oklch(0.10 0.02 var(--primary-h));
-  --secondary: oklch(0.97 0 0);
+  --secondary: oklch(0.94 0.02 145);
   --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
+  --muted: oklch(0.96 0.01 145);
+  --muted-foreground: oklch(0.50 0.02 145);
+  --accent: oklch(0.65 0.10 85);
   --accent-foreground: oklch(0.205 0 0);
 
   /* ── Semantic Colors ─────────────────────────────────────── */
@@ -131,29 +128,30 @@
   --warning-foreground: oklch(0.205 0 0);
 
   /* ── Borders & Inputs ────────────────────────────────────── */
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.90 0.015 145);
+  --input: oklch(0.92 0.010 145);
+  --ring: oklch(0.52 0.13 145);
 
-  /* ── Chart Colors ────────────────────────────────────────────
-     Layout Builder harmonizes to primary hue. See design-system.md. */
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  /* ── Chart Colors ─────────────────────────────────────────────
+     Harmonized to sage green (hue 145) primary.
+     chart-1: deep sage | chart-2: teal-green | chart-3: blue-green
+     chart-4: warm amber (complementary) | chart-5: light sage    */
+  --chart-1: oklch(0.52 0.13 145);
+  --chart-2: oklch(0.60 0.12 175);
+  --chart-3: oklch(0.55 0.10 195);
+  --chart-4: oklch(0.65 0.10 85);
+  --chart-5: oklch(0.72 0.09 130);
 
   /* ── Sidebar Colors ──────────────────────────────────────────
-     After color override: --sidebar-primary and --sidebar-ring
-     should match --primary.                                     */
-  --sidebar: oklch(0.985 0 0);
+     Tinted very slightly green — warm, calming sidebar feel.     */
+  --sidebar: oklch(0.975 0.012 145);
   --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: oklch(0.52 0.13 145);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: oklch(0.94 0.02 145);
   --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --sidebar-border: oklch(0.90 0.015 145);
+  --sidebar-ring: oklch(0.52 0.13 145);
 
   /* ── Surface / Card Tokens ───────────────────────────────────
      Driven by [data-theme] aesthetic — not overridden per domain.
@@ -185,27 +183,24 @@
      Header height presets:
        Compact:  2.75rem
        Standard: 3.5rem                                           */
-  --sidebar-width: 16rem;
+  --sidebar-width: 18rem;
   --sidebar-collapsed-width: 4rem;
   --sidebar-width-mobile: 18rem;
-  --header-height: 3.5rem;
+  --header-height: 4rem;
   --tab-bar-height: 49px;    /* 48px + 1px border */
-  --content-padding: 1.5rem;
-  --nav-item-py: 0.5rem;
+  --content-padding: 2rem;
+  --nav-item-py: 0.625rem;
 
-  /* Sidebar surface — override to tint sidebar by domain:
-     White (default): oklch(1 0 0)
-     Tinted:          oklch(0.985 0.008 var(--primary-h))
-     Subdued:         oklch(0.97 0.005 var(--primary-h))          */
-  --sidebar-bg: oklch(1 0 0);
+  /* Sidebar surface — tinted very lightly green (nature-wellness) */
+  --sidebar-bg: oklch(0.975 0.012 145);
 
   /* Tab bar background — tint to primary hue subtly if desired */
   --tab-bar-bg: var(--background);
 
   /* ── Typography Tokens ───────────────────────────────────── */
-  --font-display: var(--font-geist-sans);
-  --font-body: var(--font-geist-sans);
-  --heading-weight: 700;
+  --font-display: var(--font-dm-sans, var(--font-geist-sans));
+  --font-body: var(--font-dm-sans, var(--font-geist-sans));
+  --heading-weight: 600;
   --heading-tracking: -0.025em;
   --heading-transform: none;
   --body-weight: 400;
@@ -595,7 +590,7 @@
   --grid-gap: 1.5rem;
   --section-gap: 2.5rem;
   --nav-item-py: 0.625rem;
-  --sidebar-width: 16rem;
+  --sidebar-width: 18rem;
   --heading-weight: 600;
   --heading-tracking: -0.01em;
   --body-leading: 1.8;
@@ -952,6 +947,25 @@
      Standard page content wrapper. Reads --content-padding.     */
   .page-container {
     padding: var(--content-padding, 1.5rem);
+  }
+
+  /* ── .organic-card ───────────────────────────────────────────
+     Nature/Wellness card variant. Warm green-tinted border and
+     gentle shadow. Use alongside .aesthetic-card in this app.   */
+  .organic-card {
+    background: var(--card);
+    border: 1px solid oklch(0.88 0.025 145);
+    box-shadow: 0 2px 8px oklch(0.52 0.13 145 / 0.08);
+    border-radius: var(--radius);
+    transition:
+      border-color var(--t-interactive),
+      box-shadow var(--t-interactive),
+      transform var(--t-interactive);
+  }
+  .organic-card:hover {
+    border-color: oklch(0.60 0.12 145 / 0.60);
+    box-shadow: 0 4px 16px oklch(0.52 0.13 145 / 0.12);
+    transform: translateY(-1px);
   }
 
   /* ── Neobrutalism / Brand-Forward press animation ─────────────
