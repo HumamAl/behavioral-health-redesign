@@ -1,6 +1,6 @@
 Hi,
 
-Squarespace-to-WordPress migrations for behavioral health sites have one non-negotiable: HIPAA-compliant lead forms that don't leak PHI through third-party scripts — I mocked up what your redesigned site could look like: {VERCEL_URL}
+Squarespace-to-WordPress migrations for behavioral health sites have one non-negotiable: HIPAA-compliant lead forms that don't leak PHI through third-party scripts — I mocked up what your redesigned site could look like: https://behavioral-health-redesign.vercel.app
 
 The demo shows service pages, a compliant intake form, and SEO-preserving URL structure — a creative direction before any WordPress code gets written.
 
